@@ -10,7 +10,7 @@ Let's create our first Theia plug-in. As an example, we are going to register a 
 Another way of extending Theia is using Theia extensions. Here are the main differences between plug-ins vs the extensions.
 
 pros:
- + Code isolation: as plug-in's code in running in separate processes, it can't block Theia core processes.
+ + Code isolation: as plug-in's code is running in separate processes, it can't block Theia core processes.
  + Can be loaded at runtime. No need to recompile the full IDE of Theia.
  + Reduce compilation time
  + Self-contained. A plug-in can be packaged into a single file and loaded directly after. No extra need to grab dependencies from npmjs, etc.
@@ -57,7 +57,7 @@ yo @theia/plugin
 
 ![Yeoman plugin output](images/plug-ins/yeoman-plugin.png "Yeoman plugin output")
 
-Pick up default values for each questions. (default name and backend plug-in)
+Pick up default values for each question. (default name and backend plug-in)
 
 At this step, in `theia-hello-world-plugin` folder there is a plug-in that is already built with associated source code.
 
@@ -132,13 +132,13 @@ There are two methods `start()` and `stop()`
 
 The `start()` method is called when loading the plug-in. In this method, there is one action: registering hello world command and one callback: displaying `Hello World` as an information message. The command object has an `id` and a `label` that will be displayed in the command palette.
 
-There is an empty stop() method that could be used to do something when the plug-in is stopped. THis method is optional and may be removed if empty.
+There is an empty stop() method that could be used to do something when the plug-in is stopped. This method is optional and may be removed if empty.
 
 ## Executing the Plug-in
 
 Now we want to see the plug-in in action. For this purpose, there is a mode called `hosted mode` within Theia.
 First, be sure that you've opened the folder where is the generated plug-in inside Theia. (It needs to be part of your workspace)
-Then, bring command palette (hiting the F1 key for example) and search for `Hosted mode: start instance` and select this command.
+Then, bring command palette (hitting the F1 key for example) and search for `Hosted mode: start instance` and select this command.
 
 ![Hosted mode: start instance](images/plug-ins/hosted-plugin-start-instance.png "Hosted mode: start instance")
 
